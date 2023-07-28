@@ -1,0 +1,72 @@
+body {
+    background-color: black;
+}
+
+h1.title {
+    background-color: darkred;
+    color: white;
+    padding: 10px;
+}
+
+form {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    display: flex;
+}
+
+form button {
+    padding: 5px 10px;
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+form input {
+    padding: 5px;
+    border: none;
+    outline: none;
+    flex: 1;
+    color: white;
+    background-color: #33333300;
+}
+
+form button:hover {
+    background-color: rgb(88, 0, 0);
+}
+
+div.lista {
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+div.item {
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #333333;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.item img {
+    border-radius: 5px;
+    width: 100%;
+}
+
+div.item:hover {
+    width: 200px;
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+}

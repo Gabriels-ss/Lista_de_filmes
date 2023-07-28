@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula_12</title>
+    <link rel="stylesheet" href="css/kindred.css">
+</head>
+
+<body>
+
+    <h1>Catalogo de filmes</h1>
+    <form action="">
+        <input type="text" name="pesquisa" placeholder="Digite o nome do filme">
+        <button type="submit">Buscar</button>
+    </form>
+    <div class="lista"></div>
+
+    </div>
+    <script>
+        const formpesquisa = document.querySelector('form')
+
+        formpesquisa.onsubmit = (e) => {
+            e.preventDefault()
+            const pesquisa = e.target.pesquisa.value
+            if (pesquisa == '') {
+                alert('Preencha o campo')
+                return
+            } else {
+
+            }
+            fetch(`https://www.omdbapi.com/?s=${pesquisa}&apikey=8fa8be48`)
+                .then(result => result.json())
+                .then(json => carregalista(json))
+        }
+        function carregalista(json) {
+            const lista = document.querySelector(".lista")
+            lista.innerHTML = ""
+
+            json.Search.forEach(filme => {
+                let item = document.createElement("div")
+                item.classList.add('item')
+                item.innerHTML = `<img src="${filme.Poster}"> <h3></h3>${filme.Title}</h3>`
+                lista.appendChild(item)
+            })
+
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
